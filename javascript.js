@@ -20,37 +20,52 @@ function getComputerChoice() {
 /* Asking for user selection */
 let userChoice = prompt("Choose your weapon. Type rock, paper, or scissors.");
 
+/* Win or lose? */
+let result;
+
 /* One round of the game */
 function playRound(playerSelection, computerSelection) {
     console.log(playerSelection);
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
-            return "Paper beats rock. You lose! Loser.";
+            alert("Paper beats rock. You lose! Loser.")
+            return 2;
         } else if (computerSelection === "scissors") {
-            return "Rock beats scissors. Guess that means you win that round.";
+            alert("Rock beats scissors. Guess that means you win this round.");
+            return 1;
         } else {
-            return "It's a tie, but a winner must be named...try again.";
+            alert("It's a tie, but a winner must be named...try again.");
+            return 0;
         }
     }
     if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
-            return "My scissors cut you all up. You lose!";
+            alert("My scissors cut you all up. You lose!");
+            return 2;
         } else if (computerSelection === "rock") {
-            return "My rock has been defeated. Damn you, human!";
+            alert("My rock has been defeated. Damn you, human!");
+            return 1;
         } else {
-            return "Paper vs. paper. The battle no one asked for. Try again.";
+            alert("Paper vs. paper. The battle no one asked for. Try again.");
+            return 0;
         }
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            return "Ha Ha! My rock has obliterated your puny scissors! You lose.";
+            alert("Ha Ha! My rock has obliterated your puny scissors! You lose.");
+            return 2;
         } else if (computerSelection === "paper") {
-            return "You have sliced my paper to bits. You win...but I don't like it.";
+            alert("You have sliced my paper to bits. You win...but I don't like it.");
+            return 1;
         } else {
-            return "Scissor duel to the death! JK. It's a tie. Try again.";
+            alert("Scissor duel to the death! JK. It's a tie. Try again.");
+            return 0;
         }
     }
 }
 const playerSelection = userChoice.toLowerCase();
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+
+/* Loop the round to play a 5 round game */
+
