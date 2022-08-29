@@ -1,12 +1,6 @@
 /* Scores */
-let playerScore = Number(0);
-let computerScore = Number(0);
-
-/* Asking for user selection */
-function getPlayerGuess() {
-    let userChoice = prompt("Choose your weapon. Type rock, paper, or scissors.");
-    return userChoice;
-}
+let playerScore = 0;
+let computerScore = 0;
 
 /* Telling the idiot computer how to make it's choice */
 function getRandomIntInclusive(min, max) {
@@ -64,42 +58,33 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
 /* Win or lose? */
 function updateScores(playerScore, computerScore) {
-    if (playRound(playerSelection, computerSelection) === "You Lose.") {
-        computerScore = computerScore + 1;
-    } else if (playRound(playerSelection, computerSelection) === "You Win.") {
-        playerScore = playerScore + 1;
-    } else if (playRound(playerSelection, computerSelection) === "Tie") {
+    if (playRound() === "You Lose.") {
+        computerScore = (computerScore + 1);
+    } else if (playRound() === "You Win.") {
+        playerScore = (playerScore + 1);
+    } else if (playRound() === "Tie") {
         computerScore+=0;
         playerScore+=0;
     }  
     return (playerScore, computerScore);
 }
 
-/* Clear Selections */
-function clearSelections(playerSelection, computerSelection) {
-    return (playerSelection === 0, computerSelection === 0);
-}
-
-/* Getting the computer's selection */
-let computerSelection = getComputerChoice();
-/* Getting the player's selection */
-let playerSelection = getPlayerGuess();
-
 /* The game */
 function playGame() {
     for (let i=0; i<5; i++) {
-        getPlayerGuess();
-        console.log(playerSelection);
-        getComputerChoice();
+        /* Getting the computer's selection */
+        let computerSelection = getComputerChoice();
         console.log(computerSelection);
-        playRound(playerSelection, computerSelection);
+        /* Getting the player's selection */
+        let playerSelection = prompt("Choose your weapon. Type rock, paper, or scissors.");
+        console.log(playerSelection);
+        playRound();
         console.log(playRound(playerSelection, computerSelection));
         updateScores(playerScore, computerScore);
         console.log(playerScore, computerScore)
-        clearSelections(playerSelection, computerSelection);
-        console.log(playerSelection, computerSelection);
     }
     if (playerScore > computerScore) {
         alert("You've won the game! Congratulations. Now you've made an enemy.");
