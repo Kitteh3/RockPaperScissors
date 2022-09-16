@@ -64,6 +64,30 @@ function playRound(playerSelection, computerSelection) {
     } 
 }
 
+//Player selection from buttons
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', (e) => {
+    playerSelection = 'rock';
+    computerSelection = getComputerChoice();
+    playRound;
+    console.log(playRound(playerSelection, computerSelection));
+});
+paper.addEventListener('click', (e) => {
+    playerSelection = 'paper';
+    computerSelection = getComputerChoice();
+    playRound;
+    console.log(playRound(playerSelection, computerSelection));
+});
+scissors.addEventListener('click', (e) => {
+    playerSelection = 'scissors';
+    computerSelection = getComputerChoice();
+    playRound;
+    console.log(playRound(playerSelection, computerSelection));
+});
+
 /* Win or lose? */
 /* Scores */
 let result;
@@ -80,7 +104,7 @@ function updateScores() {
     }
 } 
 
-/* Tie Breaker */
+/* Tie Breaker
 function tieBreaker(playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
     playerSelection = prompt("It's your last chance. Choose wisely.");
@@ -96,7 +120,7 @@ function tieBreaker(playerSelection, computerSelection) {
     } else {
         tieBreaker();
     }
-} 
+} */
 
 /* The game */
 /* function playGame() {
