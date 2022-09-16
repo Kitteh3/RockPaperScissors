@@ -99,11 +99,11 @@ function tieBreaker(playerSelection, computerSelection) {
 } 
 
 /* The game */
-function playGame() {
+/* function playGame() {
     for (let i=0; i<5; i++) {
-        /* Getting the computer's selection */
+        // Getting the computer's selection
         let computerSelection = getComputerChoice();
-        /* Getting the player's selection */
+        // Getting the player's selection
         let playerSelection = prompt("Choose your weapon. Type rock, paper, or scissors.");
         playerSelection.toLowerCase;
         console.log(playerSelection, computerSelection);
@@ -122,6 +122,6 @@ function playGame() {
         alert("We seem to be tied... Let's try one more round.");
         tieBreaker();
     }
-}
-/* intializing game...do I need this? */
-playGame();
+} */
+/* intializing game...do I need this? 
+playGame(); */
