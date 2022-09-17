@@ -83,6 +83,19 @@ function updateScores() {
     }
 } 
 
+//End of Game
+function gameEnd(playerScore, computerScore) {
+    if (playerScore === 3) {
+        roundResult.textContent = "You've won the game! Congratulations. Now you've made an enemy.";
+        playerScoreBox.textContent = 0;
+        computerScoreBox.textContent = 0;
+    } else if (computerScore === 3) {
+        roundResult.textContent = "You've lost the game. Don't cry, human. I've always been superior.";
+        playerScoreBox.textContent = 0;
+        computerScoreBox.textContent = 0;
+    }
+}
+
 //Player selection from buttons
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
@@ -99,6 +112,7 @@ rock.addEventListener('click', (e) => {
     updateScores(playerScore, computerScore);
     playerScoreBox.textContent = playerScore;
     computerScoreBox.textContent = computerScore;
+    gameEnd(playerScore, computerScore);
 });
 paper.addEventListener('click', (e) => {
     playerSelection = 'paper';
@@ -108,6 +122,7 @@ paper.addEventListener('click', (e) => {
     updateScores(playerScore, computerScore);
     playerScoreBox.textContent = playerScore;
     computerScoreBox.textContent = computerScore;
+    gameEnd(playerScore, computerScore);
 });
 scissors.addEventListener('click', (e) => {
     playerSelection = 'scissors';
@@ -117,6 +132,7 @@ scissors.addEventListener('click', (e) => {
     updateScores(playerScore, computerScore);
     playerScoreBox.textContent = playerScore;
     computerScoreBox.textContent = computerScore;
+    gameEnd(playerScore, computerScore);
 });
 
 /* Tie Breaker
