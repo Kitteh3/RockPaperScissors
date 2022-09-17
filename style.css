@@ -1,0 +1,91 @@
+.background {
+    background-color: black;
+}
+
+.header {
+   display: flex;
+   padding: 50px;
+   height: 300px;
+}
+
+.logo {
+    display: flex;
+    flex: 1;
+}
+
+.bold-text {
+    align-self: center;
+    font-family: noka, sans-serif;
+    font-weight: 800;
+    font-kerning: none;
+    font-size: 30px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.player-score {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.computer-score {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.score-box {
+    display: flex;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 25px;
+    font-family: noka, sans-serif;
+    font-weight: 800;
+    font-kerning: none;
+    font-size: 30px;
+}
+
+.player-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10px;
+}
+
+.med-text {
+    display: flex;
+    color: white;
+    justify-content: center;
+    font-family: noka, sans-serif;
+    font-weight: 500;
+    font-kerning: none;
+    font-size: 24px;
+}
+
+#rock img,
+#paper img,
+#scissors img {
+    display: flex;
+    height: 200px;
+}
+
+#rock,
+#paper,
+#scissors {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    margin: 25px;
+    margin-top: 0px;
+}
