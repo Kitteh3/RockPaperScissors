@@ -96,87 +96,43 @@ function gameEnd(playerScore, computerScore) {
     }
 }
 
+function playGame() {
+    playRound(playerSelection, computerSelection);
+    updateScores(playerScore, computerScore);
+    playerScoreBox.textContent = playerScore;
+    computerScoreBox.textContent = computerScore;
+}
+
 //Player selection from buttons
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const buttons = document.querySelectorAll('button');
 //Displaying results
 const playerScoreBox = document.querySelector('.player-score-box');
 const computerScoreBox = document.querySelector('.computer-score-box');
 
+buttons.forEach( (button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.id;
+        computerSelection = getComputerChoice();
+        playGame();
+        gameEnd(playerScore, computerScore);
+    });
+});
+/*
 rock.addEventListener('click', (e) => {
     playerSelection = 'rock';
     computerSelection = getComputerChoice();
-    playRound;
-    console.log(playRound(playerSelection, computerSelection));
-    updateScores(playerScore, computerScore);
-    playerScoreBox.textContent = playerScore;
-    computerScoreBox.textContent = computerScore;
-    gameEnd(playerScore, computerScore);
+    playGame();
 });
 paper.addEventListener('click', (e) => {
     playerSelection = 'paper';
     computerSelection = getComputerChoice();
-    playRound;
-    console.log(playRound(playerSelection, computerSelection));
-    updateScores(playerScore, computerScore);
-    playerScoreBox.textContent = playerScore;
-    computerScoreBox.textContent = computerScore;
-    gameEnd(playerScore, computerScore);
+    playGame();
 });
 scissors.addEventListener('click', (e) => {
     playerSelection = 'scissors';
     computerSelection = getComputerChoice();
-    playRound;
-    console.log(playRound(playerSelection, computerSelection));
-    updateScores(playerScore, computerScore);
-    playerScoreBox.textContent = playerScore;
-    computerScoreBox.textContent = computerScore;
-    gameEnd(playerScore, computerScore);
-});
-
-/* Tie Breaker
-function tieBreaker(playerSelection, computerSelection) {
-    computerSelection = getComputerChoice();
-    playerSelection = prompt("It's your last chance. Choose wisely.");
-    playRound();
-    console.log(playRound(playerSelection, computerSelection));
-    updateScores(playerScore, computerScore);
-    if (playerScore > computerScore) {
-        alert("Congratulations! You've won the tie breaker and the game!");
-        return "You're the Winner!";
-    } else if (playerScore < computerScore) {
-        alert("Your best wasn't good enough. You lost the game.");
-        return "You're definitely a Loser.";
-    } else {
-        tieBreaker();
-    }
-} */
-
-/* The game */
-/* function playGame() {
-    for (let i=0; i<5; i++) {
-        // Getting the computer's selection
-        let computerSelection = getComputerChoice();
-        // Getting the player's selection
-        let playerSelection = prompt("Choose your weapon. Type rock, paper, or scissors.");
-        playerSelection.toLowerCase;
-        console.log(playerSelection, computerSelection);
-        playRound();
-        console.log(playRound(playerSelection, computerSelection));
-        updateScores(playerScore, computerScore);
-        console.log(playerScore, computerScore);
-    }
-    if (playerScore > computerScore) {
-        alert("You've won the game! Congratulations. Now you've made an enemy.");
-        return "You've won the game!";
-    } else if (playerScore < computerScore) {
-        alert("You've lost the game. Don't cry, human. I've always been superior.");
-        return "You've lost. Now go cry to your human mommy.";
-    } else {
-        alert("We seem to be tied... Let's try one more round.");
-        tieBreaker();
-    }
-} */
-/* intializing game...do I need this? 
-playGame(); */
+    playGame();
+}); */
