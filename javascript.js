@@ -88,6 +88,8 @@ scissors.addEventListener('click', (e) => {
     console.log(playRound(playerSelection, computerSelection));
 });
 
+//Displaying results
+
 /* Win or lose? */
 /* Scores */
 let result;
