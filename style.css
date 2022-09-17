@@ -42,7 +42,8 @@
     padding: 50px;
 }
 
-.score-box {
+.player-score-box,
+.computer-score-box {
     display: flex;
     background-color: white;
     padding: 30px 40px;
@@ -60,7 +61,8 @@
     padding: 50px 10px;
 }
 
-.med-text {
+.med-text,
+.round-result {
     display: flex;
     color: white;
     justify-content: center;

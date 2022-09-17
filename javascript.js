@@ -15,80 +15,57 @@ function getComputerChoice() {
     }
 }
 
+//result of each round text
+const roundResult = document.querySelector('.round-result');
+
 /* One round of the game */
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
-            alert("Paper beats rock. You lose! Loser.");
+            roundResult.textContent = "Paper beats rock. You lose! Loser."
             result = "You Lose.";
             return "You Lose.";
         } else if (computerSelection === "scissors") {
-            alert("Rock beats scissors. Guess that means you win this round.");
+            roundResult.textContent = "Rock beats scissors. Guess that means you win this round.";
             result = "You Win.";
             return "You Win.";
         } else {
-            alert("It's a tie, but a winner must be named...try again.");
+            roundResult.textContent = "It's a tie, but a winner must be named...try again.";
             result = "Tie.";
             return "Tie.";
         }
     }
     if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
-            alert("My scissors cut you all up. You lose!");
+            roundResult.textContent = "My scissors cut you all up. You lose!";
             result = "You Lose.";
             return "You Lose.";
         } else if (computerSelection === "rock") {
-            alert("My rock has been defeated. Damn you, human!");
+            roundResult.textContent = "My rock has been defeated. Damn you, human!";
             result = "You Win.";
             return "You Win.";
         } else {
-            alert("Paper vs. paper. The battle no one asked for. Try again.");
+            roundResult.textContent = "Paper vs. paper. The battle no one asked for. Try again.";
             result = "Tie.";
             return "Tie.";
         }
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            alert("Ha Ha! My rock has obliterated your puny scissors! You lose.");
+            roundResult.textContent = "Ha Ha! My rock has obliterated your puny scissors! You lose.";
             result = "You Lose.";
             return "You Lose.";
         } else if (computerSelection === "paper") {
-            alert("You have sliced my paper to bits. You win...but I don't like it.");
+            roundResult.textContent = "You have sliced my paper to bits. You win...but I don't like it.";
             result = "You Win.";
             return "You Win.";
         } else {
-            alert("Scissor duel to the death! JK. It's a tie. Try again.");
+            roundResult.textContent = "Scissor duel to the death! JK. It's a tie. Try again.";
             result = "Tie";
             return "Tie";
         }
     } 
 }
-
-//Player selection from buttons
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors');
-
-rock.addEventListener('click', (e) => {
-    playerSelection = 'rock';
-    computerSelection = getComputerChoice();
-    playRound;
-    console.log(playRound(playerSelection, computerSelection));
-});
-paper.addEventListener('click', (e) => {
-    playerSelection = 'paper';
-    computerSelection = getComputerChoice();
-    playRound;
-    console.log(playRound(playerSelection, computerSelection));
-});
-scissors.addEventListener('click', (e) => {
-    playerSelection = 'scissors';
-    computerSelection = getComputerChoice();
-    playRound;
-    console.log(playRound(playerSelection, computerSelection));
-});
-
-//Displaying results
 
 /* Win or lose? */
 /* Scores */
@@ -105,6 +82,42 @@ function updateScores() {
         playerScore+=0;
     }
 } 
+
+//Player selection from buttons
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+//Displaying results
+const playerScoreBox = document.querySelector('.player-score-box');
+const computerScoreBox = document.querySelector('.computer-score-box');
+
+rock.addEventListener('click', (e) => {
+    playerSelection = 'rock';
+    computerSelection = getComputerChoice();
+    playRound;
+    console.log(playRound(playerSelection, computerSelection));
+    updateScores(playerScore, computerScore);
+    playerScoreBox.textContent = playerScore;
+    computerScoreBox.textContent = computerScore;
+});
+paper.addEventListener('click', (e) => {
+    playerSelection = 'paper';
+    computerSelection = getComputerChoice();
+    playRound;
+    console.log(playRound(playerSelection, computerSelection));
+    updateScores(playerScore, computerScore);
+    playerScoreBox.textContent = playerScore;
+    computerScoreBox.textContent = computerScore;
+});
+scissors.addEventListener('click', (e) => {
+    playerSelection = 'scissors';
+    computerSelection = getComputerChoice();
+    playRound;
+    console.log(playRound(playerSelection, computerSelection));
+    updateScores(playerScore, computerScore);
+    playerScoreBox.textContent = playerScore;
+    computerScoreBox.textContent = computerScore;
+});
 
 /* Tie Breaker
 function tieBreaker(playerSelection, computerSelection) {
