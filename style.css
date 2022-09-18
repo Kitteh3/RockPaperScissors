@@ -108,3 +108,14 @@
 .game-over img {
     width: 600px;
 }
+
+.play-again {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.play-again img {
+    width: 300px;
+    cursor: pointer;
+}

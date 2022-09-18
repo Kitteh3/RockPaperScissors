@@ -83,13 +83,24 @@ function updateScores() {
     }
 } 
 
+//Play Again button
+function playAgainButton() {
+    const playAgainDiv = document.querySelector('.play-again');
+    const playAgain = document.createElement('img');
+    playAgain.src = "images/rps_play-again.png";
+    playAgainDiv.appendChild(playAgain);
+    playAgain.addEventListener('click', () => {
+        window.location.href = window.location.href;
+    })
+}
+
 //Game over image
 function showOver() {
     const gameOverDiv = document.querySelector('.game-over');
     const gameOver = document.createElement('img');
     gameOver.src = "images/rps_game-over.png";
     gameOverDiv.appendChild(gameOver);
-    setTimeout( () => gameOverDiv.removeChild(gameOver), 3000);
+    playAgainButton();
 }
 
 
