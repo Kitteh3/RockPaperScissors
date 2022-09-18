@@ -4,62 +4,62 @@
 
 .header {
    display: flex;
+   justify-content: space-between;
+   align-items: center;
    padding: 50px;
-   height: 300px;
-   flex: 0 1 auto;
    flex-wrap: wrap;
 }
 
-.header .logo img {
-    
-    height: 300px;
+.header div {
+    flex: 1 1 0%;
+}
+
+.header .logo {
+    min-width: 500px;
+    flex-shrink: 2;
 }
 
 .bold-text {
-    align-self: center;
+    text-align: center;
     font-family: noka, sans-serif;
     font-weight: 800;
     font-kerning: none;
     font-size: 30px;
     color: white;
-    padding-bottom: 10px;
 }
 
-.header .scores {
+.scores {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    margin-left: auto;
 }
 
-.scores .player-score {
+.scores div {
     display: flex;
     flex-direction: column;
-    padding: 50px;
-}
-
-.scores .computer-score {
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
+    align-content: center;
+    margin: 20px;
+    max-width: 150px;
 }
 
 .player-score-box,
 .computer-score-box {
-    display: flex;
+    min-width: 20px;
     background-color: white;
-    padding: 30px 40px;
-    border-left-color: #00dfdf;
-    border-left-width: 7px;
-    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
     font-family: noka, sans-serif;
     font-weight: 800;
     font-kerning: none;
-    font-size: 30px;
+    font-size: 50px;
+    text-align: center;
+    padding: 25px 40px;
 }
 
 .player-selection {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -70,14 +70,18 @@
 .med-text,
 .round-result {
     display: flex;
+    justify-content: center;
     padding-top: 20px;
     color: white;
-    justify-content: center;
     margin-bottom: 50px;
     font-family: noka, sans-serif;
     font-weight: 500;
     font-kerning: none;
     font-size: 24px;
+}
+
+.options {
+
 }
 
 #rock img,
