@@ -89,7 +89,9 @@ function showOver() {
     const gameOver = document.createElement('img');
     gameOver.src = "images/rps_game-over.png";
     gameOverDiv.appendChild(gameOver);
+    setTimeout( () => gameOverDiv.removeChild(gameOver), 3000);
 }
+
 
 //End of Game
 function gameEnd(playerScore, computerScore) {
