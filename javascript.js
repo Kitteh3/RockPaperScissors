@@ -83,14 +83,24 @@ function updateScores() {
     }
 } 
 
+//Game over image
+function showOver() {
+    const gameOverDiv = document.querySelector('.game-over');
+    const gameOver = document.createElement('img');
+    gameOver.src = "images/rps_game-over.png";
+    gameOverDiv.appendChild(gameOver);
+}
+
 //End of Game
 function gameEnd(playerScore, computerScore) {
     if (playerScore === 3) {
         roundResult.textContent = "You've won the game! Congratulations. Now you've made an enemy.";
+        showOver();
         playerScoreBox.textContent = 0;
         computerScoreBox.textContent = 0;
     } else if (computerScore === 3) {
         roundResult.textContent = "You've lost the game. Don't cry, human. I've always been superior.";
+        showOver();
         playerScoreBox.textContent = 0;
         computerScoreBox.textContent = 0;
     }

@@ -99,3 +99,12 @@
     margin: 25px;
     margin-top: 0px;
 }
+
+.game-over {
+    display: flex;
+    justify-content: center;
+}
+
+.game-over img {
+    width: 600px;
+}
