@@ -6,7 +6,7 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 50px;
+   padding: 0px 50px;
    flex-wrap: wrap;
 }
 
@@ -15,6 +15,7 @@
 }
 
 .header .logo {
+    margin-top: 50px;
     min-width: 500px;
     flex-shrink: 2;
 }
@@ -32,6 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 250px;
 }
 
 .scores div {
@@ -64,11 +66,9 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-top: 50px;
 }
 
-.med-text,
-.round-result {
+.med-text {
     display: flex;
     justify-content: center;
     padding-top: 20px;
@@ -81,13 +81,12 @@
 }
 
 .options {
-
+    display: flex;
 }
 
 #rock img,
 #paper img,
 #scissors img {
-    display: flex;
     height: 200px;
 }
 
@@ -95,13 +94,23 @@
 #paper,
 #scissors {
     background-color: transparent;
-    background-repeat: no-repeat;
     border: none;
     cursor: pointer;
-    overflow: hidden;
-    outline: none;
     margin: 25px;
     margin-top: 0px;
+}
+
+.round-result {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    color: white;
+    margin: 50px;
+    font-family: noka, sans-serif;
+    font-weight: 800;
+    font-kerning: none;
+    font-size: 30px;
+    text-align: center;
 }
 
 .game-over {
@@ -116,7 +125,7 @@
 .play-again {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin: 50px;
 }
 
 .play-again img {
