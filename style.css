@@ -88,16 +88,17 @@
     align-items: center;
 }
 
-button {
-
-}
-
 #rock img,
 #paper img,
 #scissors img {
     max-height: 200px;
     min-width: 10px;
     flex: 1 1 0%;
+}
+
+button:hover,
+.play-again:hover {
+    transform: scale(1.05);
 }
 
 #rock,
