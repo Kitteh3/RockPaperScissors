@@ -118,11 +118,13 @@ function gameEnd(playerScore, computerScore) {
         showOver();
         playerScoreBox.textContent = 0;
         computerScoreBox.textContent = 0;
+        document.getElementById('selection').style.display = 'none';
     } else if (computerScore === 3) {
         roundResult.textContent = "You've lost the game. Don't cry, human. I've always been superior.";
         showOver();
         playerScoreBox.textContent = 0;
         computerScoreBox.textContent = 0;
+        document.getElementById('selection').style.display = 'none';
     }
 }
 
