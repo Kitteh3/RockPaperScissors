@@ -96,10 +96,17 @@ function playAgainButton() {
 
 //Game over image
 function showOver() {
-    const gameOverDiv = document.querySelector('.game-over');
-    const gameOver = document.createElement('img');
-    gameOver.src = "images/rps_game-over.png";
-    gameOverDiv.appendChild(gameOver);
+    if (computerScore === 3) {
+        const gameOverDiv = document.querySelector('.game-over');
+        const gameOver = document.createElement('img');
+        gameOver.src = "images/rps_game-over.png";
+        gameOverDiv.appendChild(gameOver);
+    } else if (playerScore === 3) {
+        const youWinDiv = document.querySelector('.you-win');
+        const youWin = document.createElement('img');
+        youWin.src = "images/rps_you-win.png";
+        youWinDiv.appendChild(youWin);
+    }
     playAgainButton();
 }
 

@@ -126,12 +126,14 @@ button:hover,
     text-align: center;
 }
 
-.game-over {
+.game-over,
+.you-win {
     display: flex;
     justify-content: center;
 }
 
-.game-over img {
+.game-over img,
+.you-win img {
     width: 600px;
 }
 
