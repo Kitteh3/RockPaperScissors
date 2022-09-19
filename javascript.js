@@ -83,6 +83,9 @@ function updateScores() {
     }
 } 
 
+//Click Sound
+const audio = new Audio('sounds/cork-85200.mp3');
+
 //Play Again button
 function playAgainButton() {
     const playAgainDiv = document.querySelector('.play-again');
@@ -90,6 +93,7 @@ function playAgainButton() {
     playAgain.src = "images/rps_play-again.png";
     playAgainDiv.appendChild(playAgain);
     playAgain.addEventListener('click', () => {
+        audio.play();
         window.location.href = window.location.href;
     })
 }
@@ -146,6 +150,7 @@ const computerScoreBox = document.querySelector('.computer-score-box');
 
 buttons.forEach( (button) => {
     button.addEventListener('click', () => {
+        audio.play();
         playerSelection = button.id;
         computerSelection = getComputerChoice();
         playGame();
