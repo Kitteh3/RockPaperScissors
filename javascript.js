@@ -93,7 +93,6 @@ function playAgainButton() {
     playAgain.src = "images/rps_play-again.png";
     playAgainDiv.appendChild(playAgain);
     playAgain.addEventListener('click', () => {
-        audio.play();
         window.location.href = window.location.href;
     })
 }
@@ -117,13 +116,17 @@ function showOver() {
 
 //End of Game
 function gameEnd(playerScore, computerScore) {
+    const selectSound = new Audio('sounds/select-sound-thing-100628.mp3');
+    const overSound = new Audio('sounds/game-over.mp3');
     if (playerScore === 3) {
+        selectSound.play();
         roundResult.textContent = "You've won the game! Congratulations. Now you've made an enemy.";
         showOver();
         playerScoreBox.textContent = 0;
         computerScoreBox.textContent = 0;
         document.getElementById('selection').style.display = 'none';
     } else if (computerScore === 3) {
+        overSound.play();
         roundResult.textContent = "You've lost the game. Don't cry, human. I've always been superior.";
         showOver();
         playerScoreBox.textContent = 0;
